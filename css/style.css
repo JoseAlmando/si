@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap");
 
 * {
   margin: 0;
@@ -19,27 +19,40 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.greeting{
-  font-size: 40px;
-  font-weight: 500;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
-.greeting:hover{
-  background-color: white;
-  color: black;
+.greeting {
+  font: normal 200% 'Fira Code', monospace;
+  border-right: 0.1em solid;
+  width: 17em; /* fallback */
+  width: 24ch; /* # of chars */
+  margin: 1em 2em;
+  white-space: nowrap;
+  overflow: hidden;
+
+  animation: typing 10s steps(30, end),
+    /* # of steps = # of chars */ blink-caret 0.5s step-end infinite alternate;
 }
 
-.greeting span{
- font-weight: 700;
+.greeting span {
+  font-weight: 700;
 }
 
-.description{
+.description {
   font-size: 30px;
   font-weight: 300;
 }
 
-.description:hover{
+.description:hover {
   background-color: white;
   color: black;
 }
